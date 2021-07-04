@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    height: 7vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(165, 154, 154);
+}
+
+.logo{
+    width: 30%;
+    font-size: 22px;
+
+}
+
+.logo span{
+    color: rgb(12, 141, 141);
+}
+
+.navigation{
+    display: flex;
+    line-height: 1.75;
+    font-size: 1.4rem;
+}
+
+.navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.navigation li a{
+    text-decoration: none;
+    color: #000;
+    transition: border-bottom 0.5s;
+}
+
+.navigation li a:hover{
+    border-bottom: 1px solid green;
+    color: saddlebrown;
+}
+
+.btn{
+    background-color: saddlebrown;
+    padding: 5px 20px;
+    color: #ccc;
+    font-size: 16px;
+    border: 1px solid navy;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn:hover{
+    background-color: rgb(7, 3, 0);
+}
+
+.toggle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: none;
+    font-size: 20px;
+
+}
+
+.toggle::before{
+    content: '\f0c9';
+    font-weight: 900;
+    font-family: 'Font Awesome\ 5 Free';
+    cursor: pointer;
+}
+
+.main{
+    background: url('/bg.jpg');
+    background-size: cover;
+    min-height: 80vh;
+    width: 100%;
+    padding: 5rem;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: auto;
+    gap: 2rem;
+}
+.card{
+    border: 1px grey solid;
+}
+.card:hover{
+    box-shadow: 0 0 0 2px rgba(0,0,0, 1.5);
+}
+.card__image{
+    display: block;
+    padding: 2px;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.card__content {
+    line-height: 1.7;
+    font-size: 16px;
+    padding: 15px;
+    background: #fafafa;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(187, 186, 186);
+    font-size: 0.8rem;
+    color: #555555;
+    background: #eeeeee;
+}
+
+.card__info a{
+    text-decoration: none;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.card__info a:hover{
+    text-decoration: underline;
+    color: black;
+
+
+}
+
+footer {
+    position: relative;
+    height: 5vh;
+    width: 100%;
+    background-color: #333333;
+}
+
+p.copyright {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    bottom:0;
+}
+
+@media screen and (max-width: 680px) {
+    body{
+        overflow-x: hidden;
+    }
+    .header{
+        position: relative;
+        
+    }
+    .logo{
+        width: 60%;
+    }
+
+    .navigation{
+        position: absolute;
+        top: 7vh;
+        right: 0;
+        display: flex;
+        height: 22vh;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(to bottom, rgb(202, 104, 59), rgb(190, 123, 92));
+        border: 1px solid sienna;
+        transition: right 1s ease-in-out;
+        border-radius: 0 0 0 15px;
+        opacity: 0.9;
+        
+    }
+
+    
+
+    .navigation li a:hover{
+        color: rgb(240, 233, 252);
+    }
+    .navigation.active{
+        right: -36.7vh;
+        
+    }
+
+    
+
+    .btn:hover{
+        background-color: rgb(223, 148, 94);
+        color: #ccc;
+    }
+    .toggle{
+        display: block;
+    }
+    
+}
